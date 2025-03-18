@@ -1,0 +1,99 @@
+.name-input-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.name-input-container.show {
+    opacity: 1;
+}
+
+.name-input {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #ff66b2;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #ff0066;
+    outline: none;
+    width: 250px;
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: 0 0 15px rgba(255, 102, 178, 0.5);
+    transition: all 0.3s;
+}
+
+.name-input:focus {
+    border-color: #ff0066;
+    box-shadow: 0 0 20px rgba(255, 0, 102, 0.7);
+}
+
+.name-submit-btn {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    background: linear-gradient(45deg, #ff0066, #ff66b2);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 15px rgba(255, 102, 178, 0.5);
+    transition: all 0.3s;
+}
+
+.name-submit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 0, 102, 0.8);
+}
+
+.love-message-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: linear-gradient(135deg, #ff66b2, #ff0066);
+    padding: 20px 40px;
+    border-radius: 15px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1001;
+    opacity: 0;
+    box-shadow: 0 0 30px rgba(255, 0, 102, 0.8);
+    animation: none;
+}
+
+.love-message-popup.show {
+    animation: popupShow 2s forwards;
+}
+
+@keyframes popupShow {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    80% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+} 

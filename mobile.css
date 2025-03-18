@@ -1,0 +1,110 @@
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .error-message h1 {
+        font-size: 1.8rem;
+    }
+
+    .error-message p {
+        font-size: 1rem;
+    }
+
+    .love-message h2 {
+        font-size: 1.5rem;
+    }
+
+    .love-message p {
+        font-size: 1rem;
+        margin: 0.8rem 0;
+        padding: 0 15px;
+    }
+
+    .click-message {
+        font-size: 1.5rem;
+        width: 90%;
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* Điều chỉnh kích thước và vị trí của notification tabs */
+    .notification-tab {
+        max-width: 80%;
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    /* Tối ưu hiệu ứng trái tim cho mobile */
+    .heart {
+        font-size: 16px;
+    }
+
+    /* Tối ưu hiệu ứng pháo hoa cho mobile */
+    canvas {
+        transform: scale(0.8);
+    }
+
+    /* Thêm thanh loading ban đầu */
+    .loading-bar {
+        height: 3px;
+        background: linear-gradient(to right, #ff0066, #ff4da6);
+    }
+
+    /* Thêm nút điều khiển âm thanh */
+    .sound-control {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .sound-control i {
+        color: white;
+        font-size: 20px;
+    }
+
+    /* Thêm hiệu ứng rung cho mobile */
+    @keyframes mobileShake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-3px); }
+        75% { transform: translateX(3px); }
+    }
+
+    /* Tối ưu hiệu ứng gradient */
+    .gradient-flow {
+        background-size: 200% 200%;
+    }
+
+    /* Tối ưu hiệu ứng glow cho mobile */
+    .glow-text {
+        text-shadow: 0 0 5px #fff,
+                     0 0 10px #fff,
+                     0 0 15px #e60073,
+                     0 0 20px #e60073,
+                     0 0 25px #e60073;
+    }
+
+    /* Thêm hiệu ứng vuốt */
+    .swipe-indicator {
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 12px;
+        text-align: center;
+        animation: fadeInOut 2s infinite;
+    }
+
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+    }
+} 

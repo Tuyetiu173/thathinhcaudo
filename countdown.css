@@ -1,0 +1,106 @@
+.countdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+
+.countdown-container {
+    position: relative;
+    text-align: center;
+}
+
+.touch-text {
+    position: absolute;
+    width: 100%;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff88,
+                 0 0 20px #00ff88,
+                 0 0 30px #00ff88,
+                 2px 2px 2px rgba(0,0,0,0.5);
+    opacity: 0;
+    animation: touchTextAnimation 1s ease-in-out infinite;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@keyframes touchTextAnimation {
+    0% {
+        transform: translate(-50%, 10px);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -10px);
+        opacity: 0;
+    }
+}
+
+.countdown-number {
+    font-size: 15rem;
+    color: #ff3366;
+    text-shadow: 0 0 20px #ff3366,
+                 0 0 40px #ff3366,
+                 0 0 60px #ff3366,
+                 3px 3px 3px rgba(0,0,0,0.7),
+                 5px 5px 5px rgba(255,51,102,0.3);
+    animation: countdownPulse 1.5s ease-in-out;
+    font-weight: bold;
+    opacity: 0;
+    font-family: 'Arial', sans-serif;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+@keyframes countdownPulse {
+    0% {
+        transform: scale(2) rotate3d(1, 1, 0, 15deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1) rotate3d(1, 1, 0, 0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) rotate3d(1, 1, 0, -15deg);
+        opacity: 0;
+    }
+}
+
+.countdown-ready {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #00ffcc;
+    text-align: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-shadow: 0 0 15px #00ffcc,
+                 0 0 30px #00ffcc,
+                 2px 2px 2px rgba(0,0,0,0.5);
+    letter-spacing: 3px;
+}
+
+.countdown-ready.show {
+    opacity: 1;
+}
